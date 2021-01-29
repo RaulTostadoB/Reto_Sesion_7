@@ -23,11 +23,13 @@ dbListFields(MyDataBase, 'CountryLanguage')
 
 DataDB <- dbGetQuery(MyDataBase, "select * from CountryLanguage")
 names(DataDB)
-
+DataDB
 Español <- DataDB %>% filter(Language == "Spanish")
 Español.df <- as.data.frame(Español) 
 
+names(Español.df)
+Español
 
-SP.df %>% ggplot(aes( x = CountryCode, y=Percentage, fill = IsOfficial )) + 
+Español.df %>% ggplot(aes( x = CountryCode, y=Percentage, fill = IsOfficial )) + 
   geom_bin2d() +
   coord_flip()
