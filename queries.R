@@ -33,3 +33,5 @@ Español
 Español.df %>% ggplot(aes( x = CountryCode, y=Percentage, fill = IsOfficial )) + 
   geom_bin2d() +
   coord_flip()
+#Desconexión de la Base
+dbDisconnect(MyDataBase)
